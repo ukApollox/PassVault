@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    # Aktiviert das Umschreiben von URLs
+    RewriteEngine On
+
+    # Setzt das Basisverzeichnis auf das Projektverzeichnis     #://041er-blj.ch/2024/blogs/jamie/
+    RewriteBase /PassVault/
+
+    # Leitet alle anderen Anfragen an index.php um
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /PassVault/index.php [L]
+</IfModule>
+
