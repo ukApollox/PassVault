@@ -12,6 +12,7 @@ function connectToDatabase()
     $username = $_ENV['DB_USERNAME'] ?? 'root';
     $password = $_ENV['DB_PASSWORD'] ?? '';
 
+
     try {
         return new PDO(
             "pgsql:host=$host;port=$port;dbname=$dbname",

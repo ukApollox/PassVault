@@ -1,28 +1,36 @@
 <?php
+require_once 'database.php';
+
 class SignInModel {
-    private $pdo;
-
-    public function __construct($dsn, $username, $password) {
-        try {
-            $this->pdo = new PDO($dsn, $username, $password, [
-                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            ]);
-        } catch (PDOException $e) {
-            throw new Exception('Database connection failed: ' . $e->getMessage());
-        }
-    }
-
     public function validateUser($email, $password) {
-        $stmt = $this->pdo->prepare('SELECT * FROM accounts WHERE email = :email');
-        $stmt->execute([':email' => $email]);
+        $db = connectToDatabase();
+        if (!$db) {
+            die('Database connection failed.');
+        }
 
-        $user = $stmt->fetch();
-        if ($user && password_verify($password, $user['password'])) {
+        // Prepare the query
+        $stmt = $db->prepare('SELECT * FROM accounts WHERE email = :email');
+        if (!$stmt->execute([':email' => $email])) {
+            die('Query failed: ' . print_r($stmt->errorInfo(), true));
+        }
+
+        // Fetch user data
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$user) {
+            die('No user found with the provided email.');
+        }
+
+        // Debugging output
+        echo 'Fetched user: ';
+        print_r($user);
+
+        // Password verification
+        if (password_verify($password, $user['password'])) {
             return $user;
         }
+
+        echo 'Password verification failed.';
         return false;
     }
 }
-?>
+
