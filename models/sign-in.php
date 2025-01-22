@@ -13,7 +13,6 @@ class SignInModel {
         if (!$stmt->execute([':email' => $email])) {
             die('Query failed: ' . print_r($stmt->errorInfo(), true));
         }
-
         // Fetch user data
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$user) {
@@ -21,7 +20,6 @@ class SignInModel {
         }
 
         // Debugging output
-        echo 'Fetched user: ';
         print_r($user);
 
         // Password verification

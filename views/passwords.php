@@ -1,4 +1,14 @@
 <?php
 require "templates/header.php";?>
 
-<a href="add-password" class="button is-primary"><strong>Add Account Details</strong></a>
+<section class="section has-background-black is-fullheight">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-two-thirds">
+                <div class="box has-shadow-none">
+                    <a href="add-password" class="button is-primary"><strong>Add Account Details</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

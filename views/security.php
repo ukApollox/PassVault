@@ -2,7 +2,7 @@
 require "templates/header.php";
 ?>
 
-<section class="section">
+<section class="section has-background-black is-fullheight">
     <div class="container">
         <div class="columns is-centered">
             <div class="column is-two-thirds">

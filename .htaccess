@@ -2,7 +2,7 @@
     # Aktiviert das Umschreiben von URLs
     RewriteEngine On
 
-    # Setzt das Basisverzeichnis auf das Projektverzeichnis     #://041er-blj.ch/2024/blogs/jamie/
+    # Setzt das Basisverzeichnis auf das Projektverzeichnis     #://041er-blj.ch/2024/projekte/jamie_test/
     RewriteBase /PassVault/
 
     # Leitet alle anderen Anfragen an index.php um

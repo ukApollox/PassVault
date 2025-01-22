@@ -14,6 +14,9 @@ switch ($page) {
     case 'sign-up':
         require $viewDir . '/sign-up.php';
         break;
+    case 'sign-out':
+        require $viewDir . '/sign-out.php';
+        break;
     case 'passwords':
         require $viewDir . '/passwords.php';
         break;
@@ -22,9 +25,6 @@ switch ($page) {
         break;
     case 'security':
         require $viewDir . '/security.php';
-        break;
-    case 'help':
-        require $viewDir . '/help.php';
         break;
     default:
         http_response_code(404);
