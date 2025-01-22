@@ -9,11 +9,11 @@ require "templates/header.php";
                 <div class="box">
                     <div class="has-text-centered">
                         <h1 class="title has-text-white">Security Information</h1>
-                        <p class="subtitle has-text-grey">Why Passvault is secure</p>
+                        <p class="subtitle mt-2 has-text-white">Why Passvault is secure</p>
                     </div>
-                    <div class="content mt-5">
-                        <p class="has-text-justified">Passvault ensures your data is safe and secure. All your information is fully encrypted. We prioritize your privacy and guarantee that we do not collect or use your data for any purpose other than providing our service.</p>
-                        <p class="has-text-justified">Our commitment to transparency and security makes Passvault a trusted solution for managing your passwords.</p>
+                    <div class="content mt-5 has-text-white">
+                        <p class="has-text-justified">Passvault ensures your data is safe and secure. All your information is fully encrypted. We prioritize your privacy and guarantee that we do not collect or use your data. Our commitment to transparency and security makes Passvault a trusted solution for managing your passwords.</p>
+                        <img class="mt-4" src="./images/passvault.png">
                     </div>
                 </div>
             </div>

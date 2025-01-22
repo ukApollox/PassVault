@@ -6,7 +6,7 @@ require "templates/header.php";?>
         <div class="columns is-centered">
             <div class="column is-two-thirds">
                 <div class="box has-shadow-none">
-                    <a href="add-password" class="button is-primary"><strong>Add Account Details</strong></a>
+                    <a href="add-password" class="button is-light is-fullwidth"><strong>Add Account Details</strong></a>
                 </div>
             </div>
         </div>

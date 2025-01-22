@@ -38,7 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: sign-in");
             exit();
         } catch (PDOException $e) {
-            die("Error inserting data: " . $e->getMessage());
+
+            echo "<script>console.log('Debug Objects: " . "fehler" . "' );</script>";
+//            die("Error inserting data: " . $e->getMessage());
         }
     }
 }

@@ -4,6 +4,7 @@ $page = basename($_SERVER['REQUEST_URI'] ?? '');
 $viewDir = "views";
 
 switch ($page) {
+    case 'jamie_test':
     case 'home':
     case 'index':
         require $viewDir . '/home.php';

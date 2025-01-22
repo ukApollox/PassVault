@@ -1,5 +1,4 @@
 <?php
-
 function connectToDatabase()
 {
     require_once('envParser.php'); // Ensure envParser is loaded

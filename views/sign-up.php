@@ -9,7 +9,7 @@ require "models/sign-up.php";
             <div class="column is-one-third">
                 <div class="box">
                     <h2 class="title is-4 has-text-centered">Create your account</h2>
-                    <form method="POST" action="#">
+                    <form method="POST" action="sign-up">
                         <div class="field">
                             <label for="firstname" class="label">Firstname</label>
                             <div class="control">
@@ -40,7 +40,7 @@ require "models/sign-up.php";
 
                         <div class="field">
                             <div class="control">
-                                <button type="submit" class="button is-primary is-fullwidth">Sign up</button>
+                                <button type="submit" class="button is-light is-fullwidth">Sign up</button>
                             </div>
                         </div>
                     </form>

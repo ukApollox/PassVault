@@ -2,6 +2,9 @@
 require "templates/header.php";
 require "models/sign-in.php";
 
+// Start session
+session_start();
+
 $model = new SignInModel();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -13,20 +16,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $model->validateUser($inputEmail, $inputPassword);
         if ($user) {
             // Start the session and set session variables only after validation
-            session_start();
             $_SESSION['email'] = $user['email'];
 
             // Redirect to the home route
             header('Location: home');
             exit();
         } else {
-            echo "No users found with the given email and password.";
+            echo "<p class='has-text-danger'>No users found with the given email and password.</p>";
         }
     } else {
-        echo "Please fill in both email and password.";
+        echo "<p class='has-text-danger'>Please fill in both email and password.</p>";
     }
 }
 ?>
+
 
 
 
@@ -57,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="field">
                             <div class="control">
-                                <button type="submit" class="button is-primary is-fullwidth">Sign in</button>
+                                <button type="submit" class="button is-light is-fullwidth">Sign in</button>
                             </div>
                         </div>
                     </form>

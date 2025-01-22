@@ -9,7 +9,7 @@ require "models/add-password.php";
             <div class="column is-one-third">
                 <div class="box">
                     <h2 class="title is-4 has-text-centered">Add Passwords</h2>
-                    <form method="POST" action="#">
+                    <form method="POST" action="add-password">
                         <div class="field">
                             <label for="url_or_software_name" class="label">URL or Software Name</label>
                             <div class="control">
@@ -40,10 +40,10 @@ require "models/add-password.php";
 
                         <div class="field is-grouped is-grouped-right">
                             <p class="control">
-                                <button type="button" class="button is-light">Cancel</button>
+                                <a href="passwords" class="button">Cancel</a>
                             </p>
                             <p class="control">
-                                <button type="submit" class="button is-primary">Save</button>
+                                <button type="submit" class="button is-light">Save</button>
                             </p>
                         </div>
                     </form>
