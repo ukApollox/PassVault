@@ -2,7 +2,6 @@
 require "templates/header.php";
 require "models/sign-in.php";
 
-// Start session
 session_start();
 
 $model = new SignInModel();
@@ -12,14 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $inputEmail = trim($_POST['email']);
         $inputPassword = trim($_POST['password']);
 
-        // Validate user credentials
         $user = $model->validateUser($inputEmail, $inputPassword);
         if ($user) {
-            // Start the session and set session variables only after validation
-            $_SESSION['email'] = $user['email'];
-
-            // Redirect to the home route
+            $_SESSION['user_id'] = $user['user_id'];
             header('Location: home');
+            echo 'Welcome ' . $user['user_id'];
             exit();
         } else {
             echo "<p class='has-text-danger'>No users found with the given email and password.</p>";

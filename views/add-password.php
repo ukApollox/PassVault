@@ -43,7 +43,9 @@ require "models/add-password.php";
                                 <a href="passwords" class="button">Cancel</a>
                             </p>
                             <p class="control">
-                                <button type="submit" class="button is-light">Save</button>
+                                <a href="passwords">
+                                    <button type="submit" class="button is-light has-text-black">Save</button>
+                                </a>
                             </p>
                         </div>
                     </form>
