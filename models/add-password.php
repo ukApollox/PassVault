@@ -47,13 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Proceed if no errors
         if (count($errors) === 0) {
-            $passwordhash = password_hash($password, PASSWORD_DEFAULT);
 
             // Encryption
             $encrypted_url_or_software_name = openssl_encrypt($url_or_software_name, $cipher_method, $encryption_key, 0, $iv);
             $encrypted_username = openssl_encrypt($username, $cipher_method, $encryption_key, 0, $iv);
             $encrypted_email = openssl_encrypt($email, $cipher_method, $encryption_key, 0, $iv);
-            $encrypted_password = openssl_encrypt($passwordhash, $cipher_method, $encryption_key, 0, $iv);
+            $encrypted_password = openssl_encrypt($password, $cipher_method, $encryption_key, 0, $iv);
 
             try {
                 $stmt = $db->prepare("INSERT INTO user_data (url_or_software_name, user_id, username, email, password, iv) 
