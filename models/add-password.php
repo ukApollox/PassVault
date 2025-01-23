@@ -38,12 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $stmt_email = $db->prepare("SELECT email FROM accounts WHERE email = :email");
-        $stmt_email->execute(['email' => $email]);
-
-        if ($stmt_email->rowCount() > 0) {
-            $errors[] = "Email already exists";
-        }
 
         // Proceed if no errors
         if (count($errors) === 0) {

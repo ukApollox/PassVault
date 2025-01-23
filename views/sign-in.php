@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user) {
             $_SESSION['user_id'] = $user['user_id'];
             header('Location: home');
-            echo 'Welcome ' . $user['user_id'];
             exit();
         } else {
             echo "<p class='has-text-danger'>No users found with the given email and password.</p>";
@@ -72,4 +71,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </section>
 <?php
-require "templates/footer.php";?>
+require "templates/footer.php";
+?>

@@ -53,3 +53,7 @@ require "models/sign-up.php";
         </div>
     </div>
 </section>
+
+<?php
+require "templates/footer.php";
+?>

@@ -1,6 +1,14 @@
 <?php
+session_start();
+
 require "templates/header.php";
 require "models/add-password.php";
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: sign-in");
+    exit();
+}
 ?>
 
 <section class="section has-background-black is-fullheight">

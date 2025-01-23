@@ -20,3 +20,7 @@ require "templates/header.php";
         </div>
     </div>
 </section>
+
+<?php
+require "templates/footer.php";
+?>
