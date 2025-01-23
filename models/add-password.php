@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require_once 'database.php';
 
-    $encryption_key = 'your-encryption-key-here';
+    $encryption_key = '$user';
     $cipher_method = 'AES-256-CBC';
     $iv_length = openssl_cipher_iv_length($cipher_method);
 

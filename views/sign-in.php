@@ -2,7 +2,9 @@
 require "templates/header.php";
 require "models/sign-in.php";
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 $model = new SignInModel();
 
@@ -69,3 +71,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </section>
+<?php
+require "templates/footer.php";?>

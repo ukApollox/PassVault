@@ -10,11 +10,15 @@
                 <div class="navbar-item">
                     <div class="buttons">
                         <?php
+                        if (!isset($_SESSION)) {
+                            session_start();
+                        }
+
                         if (isset($_SESSION['user_id'])) { ?>
                             <a href="sign-out" class="button">Sign out</a>
                             <?php
                         }
-                        else{ ?>
+                        else { ?>
                             <a href="sign-up" class="button">Sign up</a>
                             <a href="sign-in" class="button is-light has-text-black">Sign in</a>
                             <?php
