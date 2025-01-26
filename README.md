@@ -20,10 +20,6 @@
 2. **Add Passwords**: Enter your passwords and save them securely.
 3. **Retrieve Passwords**: Access your stored passwords anytime, anywhere.
 
-[## Contributing
-
-Contributions are welcome! Please read the [contribution guidelines](CONTRIBUTING.md) before getting started.]
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
